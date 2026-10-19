@@ -23,3 +23,11 @@ body{transition:background-color .18s ease,color .18s ease}button{font:inherit;c
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.device-wrap{transform:none}}
 /* Keep the presentation switch reachable while exploring a long mobile preview. */
 .site-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+
+/* A visible invitation to explore the three genuine app captures. */
+.preview-intro{text-align:center;margin-bottom:12px}.preview-eyebrow{font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--accent)}.preview-intro p{font-size:12px;color:var(--soft);margin:3px 0 0}
+.preview-tabs{border-radius:20px;padding:5px;gap:4px;margin-bottom:20px;border-color:var(--line-strong)}.preview-tabs label{flex-direction:column;gap:5px;min-height:65px;padding:9px 3px;border-radius:15px;font-size:11px;color:var(--soft)}.preview-tab-icon{display:flex}.preview-tab-icon svg{width:19px;height:19px}.preview-tabs input:checked+label{background:#ff844d;color:#23150e;box-shadow:0 3px 10px rgba(255,119,60,.16)}.preview-tabs label:hover{background:var(--surface-raised);color:var(--ink)}.preview-tabs input:checked+label:hover{background:#ff9b6f;color:#23150e}
+.preview-navigation{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:17px 0 0;padding:0 4px}.preview-navigation button{display:grid;place-items:center;width:44px;height:44px;flex:none;border:1px solid var(--line-strong);border-radius:50%;background:var(--surface);cursor:pointer;color:var(--accent);font-size:21px;transition:background-color .18s,transform .18s}.preview-navigation button:hover{background:var(--surface-raised);transform:translateY(-1px)}.preview-navigation button:active{transform:scale(.95)}.preview-position{font-size:11px;font-weight:600;color:var(--soft);font-variant-numeric:tabular-nums;text-align:center}.preview-navigation:not([hidden])+.preview-descriptions{margin-top:12px}.hero-visual{min-height:860px}
+@media(max-width:1100px){.hero-visual{min-height:820px}}
+@media(max-width:760px){.hero-visual{min-height:0}.preview-intro{margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){.preview-navigation button:hover,.preview-navigation button:active{transform:none}}

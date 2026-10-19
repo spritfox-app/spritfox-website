@@ -26,3 +26,34 @@
   document.addEventListener('spritfox-theme-change', synchronize);
   synchronize();
 })();
+
+/* Progressive enhancement: radios also work without JavaScript. */
+(() => {
+  'use strict';
+  const demo = document.querySelector('.phone-demo');
+  if (!demo) return;
+  const choices = [...demo.querySelectorAll('input[name="app-preview"]')];
+  const navigation = demo.querySelector('.preview-navigation');
+  const position = demo.querySelector('.preview-position');
+  if (!choices.length || !navigation || !position) return;
+  function synchronize() {
+    const index = choices.findIndex(choice => choice.checked);
+    if (index < 0) return;
+    const title = demo.querySelector(`label[for="${choices[index].id}"]`).textContent.trim();
+    position.textContent = `${index + 1} von ${choices.length} · ${title}`;
+    demo.querySelectorAll('.app-panel').forEach(panel => {
+      panel.setAttribute('aria-hidden', String(panel.dataset.view !== choices[index].value));
+    });
+  }
+  choices.forEach(choice => choice.addEventListener('change', synchronize));
+  navigation.querySelectorAll('[data-preview-step]').forEach(button => {
+    button.addEventListener('click', () => {
+      const current = choices.findIndex(choice => choice.checked);
+      const next = (current + Number(button.dataset.previewStep) + choices.length) % choices.length;
+      choices.forEach((choice, index) => { choice.checked = index === next; });
+      synchronize();
+    });
+  });
+  navigation.hidden = false;
+  synchronize();
+})();
