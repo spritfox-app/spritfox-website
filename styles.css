@@ -32,3 +32,41 @@ body{transition:background-color .18s ease,color .18s ease}button{font:inherit;c
 @media(max-width:1100px){.hero-visual{min-height:820px}}
 @media(max-width:760px){.hero-visual{min-height:0}.preview-intro{margin-bottom:12px}}
 @media(prefers-reduced-motion:reduce){.preview-navigation button:hover,.preview-navigation button:active{transform:none}}
+
+/* Website outlook only. Existing app previews and legal-page styles stay unchanged. */
+.future{padding-bottom:0}
+.future-heading p{max-width:330px}
+.future-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.future-card{display:flex;flex-direction:column;min-width:0;padding:27px 25px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(150deg,rgba(255,132,77,.055),transparent 65%),color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:0 8px 32px rgba(10,22,12,.025);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s ease,border-color .25s ease}
+.future-card-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+.future-symbol{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:13px;background:rgba(255,132,77,.07);color:var(--accent)}
+.future-symbol svg{width:22px;height:22px}
+.future-status{border:1px solid var(--line);border-radius:999px;padding:4px 9px;font-size:10px;font-weight:600;line-height:1.5;color:var(--soft)}
+.future-category{margin-bottom:12px;font-size:10px;font-weight:650;letter-spacing:.14em;color:var(--accent)}
+.future-card h3{font-size:26px;letter-spacing:-.035em;line-height:1.16;margin-bottom:18px}
+.future-card p{font-size:13px;line-height:1.8;margin-bottom:25px}
+.future-card-note,.future-card-link{font-size:11px;line-height:1.6;border-top:1px solid var(--line);padding-top:17px;margin-top:auto}
+.future-card-note{color:var(--muted)}
+.future-card-link{display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--accent);font-weight:600;text-decoration:none}
+.future-countries{margin-top:24px;padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:radial-gradient(ellipse at 100% 0,rgba(255,132,77,.06),transparent 55%),var(--surface)}
+.future-countries-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
+.future-countries-heading .eyebrow{margin-bottom:14px}
+.future-countries-heading h3{font-size:30px;line-height:1.15}
+.future-countries-heading>p{max-width:350px;font-size:13px;margin:0}
+.country-group{border-top:1px solid var(--line);padding-top:23px;margin-top:23px}
+.country-group h4{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:0 0 16px;font-size:12px;font-weight:600;line-height:1.6}
+.country-group h4>span:last-child{margin-left:auto;color:var(--muted);font-size:11px;font-weight:400}
+.country-state-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+[data-country-status="planned"] .country-state-dot{background:transparent;border:1px solid var(--muted)}
+.future-country-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;padding:0;margin:0;list-style:none}
+.future-country-list li{display:flex;align-items:center;gap:9px;min-width:0;padding:9px 10px;border:1px solid var(--line);border-radius:12px;font-size:12px;line-height:1.5;color:var(--soft)}
+.future-country-list li>span{font-size:19px;line-height:1.3;flex:none}
+[data-country-status="available"] .future-country-list{display:flex;flex-wrap:wrap}
+[data-country-status="available"] li{padding:9px 16px;background:var(--surface-raised);color:var(--ink)}
+.future .future-disclaimer{font-size:11px;line-height:1.7;margin:23px 0 0;max-width:750px}
+@media(hover:hover){.future-card:hover{transform:translateY(-3px);border-color:rgba(255,132,77,.3)}}
+@supports(animation-timeline:view()){@media(prefers-reduced-motion:no-preference){.future-card{animation:rise-in .6s ease-out both;animation-timeline:view();animation-range:entry 0% entry 25%}}}
+@media(max-width:1000px){.future-country-list{grid-template-columns:repeat(4,minmax(0,1fr))}.future-card{padding:23px 20px}.future-card h3{font-size:24px}.future-card-top{margin-bottom:24px}}
+@media(max-width:760px){.future-grid{grid-template-columns:1fr}.future-card{padding:25px}.future-card h3 br{display:none}.future-card-top{margin-bottom:24px}.future-countries-heading{align-items:flex-start;flex-direction:column;gap:18px}.future-countries-heading>p{max-width:460px}.future-country-list{grid-template-columns:repeat(3,minmax(0,1fr))}.future-countries{padding:26px}.future-heading p{max-width:460px}}
+@media(max-width:600px){.future-country-list{grid-template-columns:repeat(2,minmax(0,1fr))}.future-countries{padding:22px 17px}.future-country-list li{padding:8px;font-size:11px;gap:7px}.country-group h4>span:last-child{margin-left:0}.future-countries-heading h3{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.future-card:hover{transform:none}}
