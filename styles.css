@@ -70,3 +70,24 @@ body{transition:background-color .18s ease,color .18s ease}button{font:inherit;c
 @media(max-width:760px){.future-grid{grid-template-columns:1fr}.future-card{padding:25px}.future-card-top{margin-bottom:24px}.future-countries-heading{align-items:flex-start;flex-direction:column;gap:18px}.future-countries-heading>p{max-width:460px}.future-country-list{grid-template-columns:repeat(3,minmax(0,1fr))}.future-countries{padding:26px}.future-heading p{max-width:460px}}
 @media(max-width:600px){.future-country-list{grid-template-columns:repeat(2,minmax(0,1fr))}.future-countries{padding:22px 17px}.future-country-list li{padding:8px;font-size:11px;gap:7px}.country-group h4>span:last-child{margin-left:0}.future-countries-heading h3{font-size:28px}}
 @media(prefers-reduced-motion:reduce){.future-card:hover{transform:none}}
+
+/* Compact outlook below the hero; its short hero link is visible before the full phone preview on mobile. */
+.hero-outlook{display:flex;align-items:center;gap:11px;width:fit-content;max-width:100%;margin:-10px 0 24px;padding:10px 13px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--surface) 85%,transparent);color:var(--soft);font-size:11px;font-weight:550;line-height:1.65;text-decoration:none;transition:border-color .2s ease,background-color .2s ease}
+.hero-outlook .live-dot{flex:none;width:5px;height:5px}
+.hero-outlook>span:last-child{margin-left:8px;color:var(--accent)}
+.hero-outlook:hover{border-color:var(--accent);color:var(--ink);background:var(--surface)}
+.growth-preview{padding:27px;margin:0 0 26px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(130deg,rgba(255,132,77,.055),transparent 65%),color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(10,22,12,.025);scroll-margin-top:110px}
+.growth-intro{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:22px}
+.growth-intro h2{font-size:29px;line-height:1.2;letter-spacing:-.035em;margin-bottom:10px}
+.growth-intro h2>span:last-child{display:inline-block;font-size:23px;vertical-align:2px;margin-left:3px}
+.growth-intro p{max-width:650px;font-size:13px;line-height:1.75;margin:0}
+.growth-intro .text-link{color:var(--accent);flex-shrink:0;font-size:11px;line-height:1.6;min-height:44px;max-width:245px}
+.growth-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.growth-list li{display:flex;align-items:center;gap:13px;min-width:0;padding:15px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 76%,transparent)}
+.growth-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;width:33px;height:33px;border-radius:10px;background:rgba(255,132,77,.07);color:var(--accent)}
+.growth-icon svg{width:19px;height:19px}
+.growth-list strong{display:block;font-size:13px;line-height:1.5;font-weight:650;color:var(--ink)}
+.growth-list li>div>span{display:block;font-size:11px;line-height:1.6;color:var(--muted);margin-top:3px}
+@supports(animation-timeline:view()){@media(prefers-reduced-motion:no-preference){.growth-preview{animation:rise-in .5s ease-out both;animation-timeline:view();animation-range:entry 0% entry 20%}}}
+@media(max-width:1000px){.growth-intro{align-items:flex-start;flex-direction:column;gap:10px}.growth-intro .text-link{max-width:none}.growth-list li{padding:13px;gap:10px}}
+@media(max-width:600px){.hero-outlook{font-size:11px;margin-bottom:22px}.growth-preview{padding:22px 18px;margin-bottom:22px}.growth-intro{margin-bottom:16px}.growth-intro h2{font-size:27px}.growth-intro p{font-size:12px}.growth-list{grid-template-columns:1fr;gap:8px}.growth-list li{padding:11px 12px}.growth-list li>div{display:grid;grid-template-columns:53px minmax(0,1fr);align-items:center;gap:8px;flex:1;min-width:0}.growth-list li>div>span{margin:0}.growth-list strong{font-size:12px}.growth-icon{width:29px;height:29px}.growth-icon svg{width:18px;height:18px}}
